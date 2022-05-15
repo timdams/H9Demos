@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H9Demo_Bar", "H9Demo_Bar\H9Demo_Bar.csproj", "{AB873FAF-0EE4-4217-A41C-A1DD8D3AD5A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H9Demo_Bar", "H9Demo_Bar\H9Demo_Bar.csproj", "{AB873FAF-0EE4-4217-A41C-A1DD8D3AD5A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttackOfTheClones", "AttackOfTheClones\AttackOfTheClones.csproj", "{F3D33765-3269-487D-BE85-1C329DABAB6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AB873FAF-0EE4-4217-A41C-A1DD8D3AD5A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB873FAF-0EE4-4217-A41C-A1DD8D3AD5A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB873FAF-0EE4-4217-A41C-A1DD8D3AD5A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3D33765-3269-487D-BE85-1C329DABAB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D33765-3269-487D-BE85-1C329DABAB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D33765-3269-487D-BE85-1C329DABAB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D33765-3269-487D-BE85-1C329DABAB6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

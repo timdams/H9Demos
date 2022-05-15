@@ -29,7 +29,7 @@ namespace H9Demo_Bar
                         Console.WriteLine("Hoeveel consumpties?");
                         int aantal = int.Parse(Console.ReadLine());
                         Console.WriteLine("Prijs consumpties?");
-                        int prijs = int.Parse(Console.ReadLine());
+                        double prijs = double.Parse(Console.ReadLine());
                         klanten[klant].VoegToe(aantal, prijs);
                         break;
                     case "r":

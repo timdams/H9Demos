@@ -8,24 +8,24 @@ namespace H9Demo_Bar
 {
     class KlantRekening
     {
-        private List<int> kosten = new List<int>();
+        private List<double> kosten = new List<double>();
 
-        public void VoegToe(int aantal, int prijs)
+        public void VoegToe(int aantal, double prijs)
         {
             kosten.Add(aantal * prijs);
         }
 
         public void Rekenaf()
         {
-            int som = BerekenSom();
+            double som = BerekenSom();
             Console.WriteLine($"Totaal = {som}");
             kosten.Clear();
 
         }
 
-        private int BerekenSom()
+        private double BerekenSom()
         {
-            int som = 0;
+            double som = 0;
             foreach (var kost in kosten)
             {
                 som += kost;
