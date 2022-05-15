@@ -7,7 +7,8 @@ namespace H9Demo_Bar
     {
         static void Main(string[] args)
         {
-            bool happyHour = false;
+
+            KostberekeningsStrategie actueleStrategie = new NormaleStrategie();
             List<KlantRekening> klanten = new List<KlantRekening>();
             for (int i = 0; i < 10; i++)
             {
@@ -18,7 +19,7 @@ namespace H9Demo_Bar
             do
             {
                 Console.Clear();
-                ToonTitel();
+                ToonTitel(actueleStrategie);
                 PrintAlleRekeningen(klanten);
                 keuze = ToonMenuEnVraagInvoer();
                 switch (keuze)
@@ -29,8 +30,8 @@ namespace H9Demo_Bar
                         Console.WriteLine("Hoeveel consumpties?");
                         int aantal = int.Parse(Console.ReadLine());
                         Console.WriteLine("Prijs consumpties?");
-                        int prijs = int.Parse(Console.ReadLine());
-                        klanten[klant].VoegToe(aantal, prijs);
+                        double prijs = double.Parse(Console.ReadLine());
+                        klanten[klant].VoegToe(aantal, prijs, actueleStrategie);
                         break;
                     case "r":
                         Console.WriteLine("Welke klantnummer? (0-9)");
@@ -39,10 +40,16 @@ namespace H9Demo_Bar
                         break;
 
                     case "h":
-                        happyHour = !happyHour;
-                        if(!happyHour)
-                            Console.WriteLine("Happy hour niet actief");
-                        else Console.WriteLine("Happy hour actief");
+                        if (actueleStrategie is NormaleStrategie)
+                        {
+                            Console.WriteLine("Happy hour  actief");
+                            actueleStrategie = new HappyHourStrategie();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Happy hour actief");
+                            actueleStrategie = new NormaleStrategie();
+                        }
                       
                         break;
                     default:
@@ -70,7 +77,7 @@ namespace H9Demo_Bar
             return Console.ReadLine();
         }
 
-        private static void ToonTitel()
+        private static void ToonTitel(KostberekeningsStrategie actueleStrategie)
         {
             string title = @"
 __________________ _______  _______    ______   _______  _______ 
@@ -83,8 +90,16 @@ __________________ _______  _______    ______   _______  _______
    )_(   \_______/|/     \|\_______)  |/ \___/ |/     \||/   \__/
                                                                  
 ";
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Black;
+            if (actueleStrategie is HappyHourStrategie)
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Black;
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+            }
             Console.WriteLine(title);
             Console.ResetColor();
         }
